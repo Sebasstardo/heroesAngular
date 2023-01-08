@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{HeroesHijo.superhero}}</mat-card-title>
+        <mat-card-subtitle>{{HeroesHijo.alter_ego}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- se envia todo el objeto del heroe al pipe -->
+    <img mat-card-image [src]="HeroesHijo | imagen ">
+
+    <mat-card-content>
+        <h3>{{HeroesHijo.publisher}}</h3>
+        <p><strong>Primera aparicion</strong>{{HeroesHijo.first_appearance}}
+            <br>
+            <strong>Personajes:</strong> {{HeroesHijo.characters}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="warn" [routerLink]="['/heroes',HeroesHijo.id]">
+            Leer Mas..
+        </button>
+   
+        <button mat-button color="info" [routerLink]="['/heroes/editar',HeroesHijo.id]">
+            Editar
+        </button>
+    </mat-card-actions>
+
+</mat-card>
